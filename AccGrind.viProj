@@ -1,0 +1,81 @@
+
+framework=/home/genius3/work/github/ProgrammingLab/AccGrind/framework CD=. filter="*.cpp buildlog Makefile" {
+ HostInputHandler.cpp
+ HostInterpret.cpp
+ InputRouter.cpp
+ PluginLoader.cpp
+ PluginManager.cpp
+ main.cpp
+ buildlog
+ Makefile
+}
+
+headers=/home/genius3/work/github/ProgrammingLab/AccGrind/include CD=. filter="*.h" {
+ HostInputHandler.h
+ HostInterpret.h
+ IInputHandler.h
+ InputRouter.h
+ PluginLoader.h
+ PluginManager.h
+ ThreadSafeStack.h
+ keyInputSource.h
+}
+
+interImpl=/home/genius3/work/github/ProgrammingLab/AccGrind/interface CD=. filter="*.cpp" {
+  Makefile
+}
+interface=/home/genius3/work/github/ProgrammingLab/AccGrind/interface CD=. filter="*.h Makefile *.cpp" {
+ IInterpreter.h
+ IOption.h
+ ITask.h
+ JoinThreads.h
+ ThreadGuard.h
+ genUtils.h
+ libmain.h
+ taskCreater.h
+ Makefile
+ genUtils.cpp
+ iosource.h
+}
+
+
+plugins=/home/genius3/work/github/ProgrammingLab/AccGrind/plugins CD=/home/genius3/work/github/ProgrammingLab/AccGrind/plugins filter="Makefile" {
+ Makefile
+  textEcho=/home/genius3/work/github/ProgrammingLab/AccGrind/plugins/textEcho  CD=/home/genius3/work/github/ProgrammingLab/AccGrind/plugins/textEcho  filter="*" {
+  Makefile
+  buildlog
+  specialTextTask.cpp
+  specialTextTask.h
+  textInterpreter.cpp
+  textInterpreter.h
+  textTask.cpp
+  textTask.h
+  libmain.cpp
+  testPlugin.cpp
+ }
+ serviceMgmt=/home/genius3/work/github/ProgrammingLab/AccGrind/plugins/serviceMgmt  CD=/home/genius3/work/github/ProgrammingLab/AccGrind/plugins/serviceMgmt  filter="*.cpp *.h Makefile buildlog" {
+  libmain.cpp
+  StartMyServOption.h
+  StartMyServOption.cpp
+  StartServiceTask.cpp
+  StartServiceTask.h
+  serviceInterpreter.h
+  serviceInterpreter.cpp
+  Makefile
+  buildlog
+ }
+}
+
+doc=/home/genius3/work/github/ProgrammingLab/AccGrind filter="*.md" {
+ Readme.md
+}
+
+
+misc=/home/genius3/work/github/ProgrammingLab/AccGrind/trial CD=. filter="*" {
+ Makefile
+ buildlog
+ regExTrial.cpp
+ testdlOpen.cpp
+ pluginList.cpp
+ testOptionSplit.cpp
+}
